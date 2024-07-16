@@ -11,6 +11,7 @@ notes.txt
 terraform.tfstate.d
 .terraform.lock.hcl
 
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -129,3 +130,6 @@ dmypy.json
 
 # Ignore idea
 .idea/
+
+#code download folder
+./examples/base/autoalarm
