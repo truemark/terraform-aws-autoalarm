@@ -1,7 +1,7 @@
 variable "prometheus_workspace_id" {
   description = "AWS managed prometheus workspace ID used for alarm creation"
   type        = string
-  default = ""
+  default     = ""
 }
 
 variable "region" {
@@ -12,5 +12,5 @@ variable "region" {
 variable "branch" {
   description = "The branch to download the tarball from"
   type        = string
-  default = "main"
+  default     = "main"
 }
