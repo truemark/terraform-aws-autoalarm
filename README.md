@@ -6,6 +6,7 @@ This Terraform configuration downloads and unzips the AutoAlarm project from Git
 
 - [Terraform](https://www.terraform.io/downloads.html) 1.5.7 or later
 - [AWS CLI](https://aws.amazon.com/cli/)
+- [pnpm](installed via npm) 9.5.0 or later
 
 
 ## Setup

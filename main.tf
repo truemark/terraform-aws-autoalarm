@@ -35,12 +35,14 @@ resource "null_resource" "autoalarm_deploy" {
   provisioner "local-exec" {
     command = <<EOT
       export AWS_REGION=${var.region}
+      echo "AWS_REGION set to: ${var.region}"
       cd ${path.module}/autoalarm/cdk
-      npx pnpm@9.5.x install --frozen-lockfile
+      pnpm install --frozen-lockfile
       cd ../handlers
-      npx pnpm@9.5.x install --frozen-lockfile
-      cd ../cdk
-      npx aws-cdk@2.x deploy -c prometheusWorkspaceId=${var.prometheus_workspace_id} AutoAlarm --require-approval never
+      pnpm install --frozen-lockfile
+      cd ../ && pnpm build
+      cd cdk
+      pnpx aws-cdk@2.x deploy -c prometheusWorkspaceId=${var.prometheus_workspace_id} AutoAlarm --require-approval never
     EOT
   }
 }
